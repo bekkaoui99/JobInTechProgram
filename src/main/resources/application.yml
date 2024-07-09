@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: JobInTechProgram
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/JobInTechProgramDB
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+#logging:
+#  level:
+#    org:
+#      mongodb:
+#        driver: DEBUG
+server:
+  port: 9998
+
+azure:
+  storage:
+    account-name: ${AZURE_STORAGE_ACCOUNT_NAME}
+    sas-token: ${AZURE_STORAGE_SAS_TOKEN}
+    connection-string: ${AZURE_STORAGE_CONNECTION_STRING}
+    container-name: ${AZURE_STORAGE_CONTAINER_NAME}
+
+app:
+  security:
+    jwt:
+      secret-key: c0182a0c93fdf659eb425445c099af10c66ce08fca923360bf67139abb1fb5a3
+      expiration: 86400000 # 1 day
+      refresh-token:
+        expiration: 604800000 # 7 days
